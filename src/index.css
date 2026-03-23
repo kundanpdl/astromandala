@@ -1,0 +1,85 @@
+@import "tailwindcss";
+/* Or just @import "tailwindcss"; if using Tailwind v4 syntax */
+@plugin "daisyui";
+
+@theme {
+  /* Colors */
+  --color-primary: #f97316;
+  --text-primary: #f97316;
+
+  /* Fonts */
+  --font-sans: "Poppins", sans-serif;
+
+  /* Container */
+  --container-padding: 1rem;
+  --container-padding-sm: 2rem;
+  --container-padding-lg: 4rem;
+  --container-padding-xl: 5rem;
+  --container-padding-2xl: 6rem;
+
+  /* Animation */
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-slideInLeftLoop: slideInLeftLoop 3s ease-in-out;
+  --animate-slideInRightLoop: slideInRightLoop 3s ease-in-out;
+  --animate-fadeInUp: fadeInUp 4s ease-in-out;
+}
+
+/* Custom container behavior */
+.container {
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: var(--container-padding-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--container-padding-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: var(--container-padding-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    padding-inline: var(--container-padding-2xl);
+  }
+}
+
+@keyframes slideInLeftLoop {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Keyframes */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInRightLoop {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
